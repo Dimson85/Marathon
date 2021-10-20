@@ -25,11 +25,15 @@ public class Task1 {
 
             if (num > 8) {
                 eight++;
-            } else if (num == 1) {
+            }
+            if (num == 1) {
                 one++;
-            } else if (num % 2 == 0) {
+            }
+            if (num % 2 == 0) {
                 even++;
-            } else if (num % 2 != 0) {
+            }
+
+            if (num % 2 != 0) {
                 odd++;
             }
 
