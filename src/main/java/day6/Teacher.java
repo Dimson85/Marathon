@@ -11,10 +11,11 @@ public class Teacher {
         this.name = name;
         this.object = object;
     }
+    Random r = new Random();
 
     public void evaluate(Student student) {
 
-        Random r = new Random();
+
         int grade = r.nextInt(4) + 2;
         String grade2 = "";
         switch (grade) {
