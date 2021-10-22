@@ -38,6 +38,14 @@ public class Player {
             System.out.println("На поле нет свободных мест");
         }
     }
+
+    public int getStamina() {
+        return stamina;
+    }
+
+    public static int getCountPlayers() {
+        return countPlayers;
+    }
 }
 //info() - выводит сообщение в зависимости от количества игроков на поле.
 // Если игроков меньше 6, то выводит сообщение: “Команды неполные.
