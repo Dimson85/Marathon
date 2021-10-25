@@ -24,7 +24,9 @@ public class Player {
     }
 
     public void run() {
-        stamina = stamina - 1;
+        if (stamina > 1) {
+            stamina = stamina - 1;
+        }
         if (stamina == MIN_STAMINA) {
             countPlayers = countPlayers - 1;
         }
