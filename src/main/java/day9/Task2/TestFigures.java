@@ -27,7 +27,7 @@ public class TestFigures {
 
         for (Figure figure : figures) {
 
-            if (figure.getColor().equalsIgnoreCase("red")) {
+            if ("red".equalsIgnoreCase(figure.getColor())) {
                 res = res + figure.perimeter();
             }
         }
@@ -41,7 +41,7 @@ public class TestFigures {
 
         for (Figure figure : figures) {
 
-            if (figure.getColor().equalsIgnoreCase("red")) {
+            if ("red".equalsIgnoreCase(figure.getColor())) {
                 res = res + figure.area();
             }
         }
