@@ -3,6 +3,8 @@ package day11.task2;
 public class Shaman extends Hero implements Healer, MagicAttack {
 
     public int magicAtt;
+    private final int scoreHealHimself = 50;
+    private final int scoreHealTeammate = 30;
 
     public Shaman() {
         this.physAtt = 10;
@@ -14,19 +16,19 @@ public class Shaman extends Hero implements Healer, MagicAttack {
 
     @Override
     public void healHimself() {
-        if (health + 50 > 100) {
+        if (health + scoreHealHimself > 100) {
             health = MAX_HEALTH;
         } else {
-            health += 50;
+            health += scoreHealHimself;
         }
     }
 
     @Override
     public void healTeammate(Hero hero) {
-        if (hero.health + 30 > MAX_HEALTH) {
+        if (hero.health + scoreHealTeammate > MAX_HEALTH) {
             hero.health = MAX_HEALTH;
         } else {
-            hero.health += 30;
+            hero.health += scoreHealTeammate;
         }
     }
 
