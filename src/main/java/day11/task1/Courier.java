@@ -22,17 +22,17 @@ public class Courier implements Worker {
     @Override
     public void doWork() {
         salary = salary + 100;
-        warehouse.countDeliveredOrders++;
+        warehouse.setCountDeliveredOrders(1);
     }
 
     @Override
     public void bonus() {
-        if (warehouse.countDeliveredOrders >= 10000 || !isPayed ) {
+        if (warehouse.getCountDeliveredOrders() >= 10000 || !isPayed ) {
             salary = salary + 50000;
             isPayed = true;
-        } else if (warehouse.countDeliveredOrders < 10000) {
+        } else if (warehouse.getCountDeliveredOrders() < 10000) {
             System.out.println("Бонус пока не доступен");
-        } else if (warehouse.countDeliveredOrders <= 10000 || isPayed) {
+        } else if (warehouse.getCountDeliveredOrders() <= 10000 || isPayed) {
             System.out.println("Бонус уже был выплачен");
         }
     }

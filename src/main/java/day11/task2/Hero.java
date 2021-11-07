@@ -14,10 +14,11 @@ public abstract class Hero implements PhysAttack {
 
     @Override
     public void physicalAttack(Hero hero) {
-        if (hero.health - physAtt * (1 - hero.physDef / 100) < MIN_HEALTH) {
+        double percent = 1 - hero.physDef / 100;
+        if (hero.health - physAtt * percent < MIN_HEALTH) {
             hero.health = MIN_HEALTH;
         } else {
-            hero.health = (int) (hero.health - physAtt * (1 - hero.physDef / 100));
+            hero.health = (int) (hero.health - physAtt * percent);
         }
     }
 

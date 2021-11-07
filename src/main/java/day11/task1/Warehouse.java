@@ -5,8 +5,8 @@ package day11.task1;
 // и методом toString() для получения информации о значениях полей склада.
 
 public class Warehouse {
-    public int countPickedOrders;
-    public int countDeliveredOrders;
+    private int countPickedOrders;
+    private int countDeliveredOrders;
 
 
 
@@ -16,6 +16,14 @@ public class Warehouse {
 
     public int getCountDeliveredOrders() {
         return countDeliveredOrders;
+    }
+
+    public void setCountPickedOrders(int countPickedOrders) {
+        this.countPickedOrders += countPickedOrders;
+    }
+
+    public void setCountDeliveredOrders(int countDeliveredOrders) {
+        this.countDeliveredOrders += countDeliveredOrders;
     }
 
     @Override

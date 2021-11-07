@@ -23,7 +23,7 @@ public class Picker implements Worker {
     public void doWork() {
 
         salary = salary + 80;
-        warehouse.countPickedOrders = warehouse.countPickedOrders + 1;
+        warehouse.setCountPickedOrders(1);
 
 
     }
@@ -31,12 +31,12 @@ public class Picker implements Worker {
     @Override
     public void bonus() {
 
-        if (warehouse.countPickedOrders >= 10000 || !isPayed) {
+        if (warehouse.getCountPickedOrders() >= 10000 || !isPayed) {
             salary = salary + 70000;
             isPayed = true;
-        } else if (warehouse.countPickedOrders < 10000) {
+        } else if (warehouse.getCountPickedOrders() < 10000) {
             System.out.println("Бонус пока не доступен");
-        } else if (warehouse.countPickedOrders >= 10000 || isPayed) {
+        } else if (warehouse.getCountPickedOrders() >= 10000 || isPayed) {
             System.out.println("Бонус уже был выплачен");
         }
     }

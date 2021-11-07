@@ -14,11 +14,12 @@ public class Magician extends Hero implements MagicAttack {
 
     @Override
     public void magicalAttack(Hero hero) {
-        if (hero.health - magicAtt * (1 - hero.magicDef / 100) < 0) {
+        double percent = 1 - hero.magicDef / 100;
+        if (hero.health - magicAtt * percent < 0) {
             hero.health = MIN_HEALTH;
 
         } else {
-            hero.health = (int) (hero.health - magicAtt * (1 - hero.magicDef / 100));
+            hero.health = (int) (hero.health - magicAtt * percent);
         }
     }
 
