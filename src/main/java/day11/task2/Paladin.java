@@ -1,8 +1,8 @@
 package day11.task2;
 
 public class Paladin extends Hero implements Healer {
-    private final int scoreHealHimself = 25;
-    private final int scoreHealTeammate = 10;
+    private final int SCORE_HEAL_HIMSELF = 25;
+    private final int SCORE_HEAL_TEAMMATE = 10;
 
 
     public Paladin() {
@@ -13,18 +13,18 @@ public class Paladin extends Hero implements Healer {
 
     @Override
     public void healHimself() {
-        if (health + scoreHealHimself > 100) {
+        if (health + SCORE_HEAL_HIMSELF > 100) {
             health = MAX_HEALTH;
         } else {
-            health += scoreHealHimself;
+            health += SCORE_HEAL_HIMSELF;
         }
     }
     @Override
     public void healTeammate(Hero hero) {
-        if (hero.health + scoreHealTeammate > MAX_HEALTH) {
+        if (hero.health + SCORE_HEAL_TEAMMATE > MAX_HEALTH) {
             hero.health = MAX_HEALTH;
         } else {
-            hero.health += scoreHealTeammate;
+            hero.health += SCORE_HEAL_TEAMMATE;
         }
 
     }

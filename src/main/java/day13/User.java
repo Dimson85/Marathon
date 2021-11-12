@@ -46,33 +46,11 @@ public class User {
     }
 
     public boolean isSubscribed(User user) {
-        boolean resEquals = false;
-        for (User u1 : subscriptions) {
-            if (u1.equals(user)) {
-                resEquals = true;
-            }
-        }
-        return resEquals;
+       return subscriptions.contains(user);
     }
 
     public boolean isFriend(User user) {
-        boolean isFriends = false;
-        boolean isFriend1 = false;
-        boolean isFriend2 = false;
-        for (User u1 : subscriptions) {
-            if (u1.equals(user)) {
-                isFriend1 = true;
-            }
-        }
-        for (User u2 : user.getSubscriptions()) {
-            if (u2.equals(this)) {
-                isFriend2 = true;
-            }
-        }
-        if (isFriend1 & isFriend2) {
-            isFriends = true;
-        }
-        return isFriends;
+       return this.isSubscribed(user) && user.isSubscribed(this);
     }
 
     public String getUsername() {
